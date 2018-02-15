@@ -1,7 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { TableModule } from 'primeng/table';
+import { ButtonModule } from 'primeng/button';
 
 import { AppComponent } from './app.component';
 import { CreateComponent } from './components/create/create.component';
@@ -11,6 +17,7 @@ import { ReadComponent } from './components/read/read.component';
 import { UpdateComponent } from './components/update/update.component';
 import { DeleteComponent } from './components/delete/delete.component';
 import { JoinComponent } from './components/join/join.component'
+import { CrudApi } from './services/crudApi';
 
 
 @NgModule({
@@ -26,9 +33,13 @@ import { JoinComponent } from './components/join/join.component'
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    TableModule,
+    ButtonModule,
+    FormsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [CrudApi],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,7 @@
 <div class="container" style="padding-left: 0; padding-right: 0;">
   <header class="navbar navbar-light navbar-fixed-top navbar-expand-lg">
 
-    <a class="navbar-brand" [routerLink]="['/']" (click)="navbarCollapsed = true">Ang Fes</a>
+    <a class="navbar-brand" [routerLink]="['/']" (click)="navbarCollapsed = true">API {{env}}</a>
 
     <button class="navbar-toggler navbar-toggler-right" type="button" (click)="navbarCollapsed = !navbarCollapsed"
             [attr.aria-expanded]="!navbarCollapsed" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,8 +40,8 @@
       </ul>
 
       <span *ngIf="isAuthenticated && currentUser" class="navbar-text mr-sm-2">Welcome {{currentUser}}</span>
-      <button *ngIf="!isAuthenticated" class="btn btn-light mr-sm-2" (click)="login()" type="login" placeholder="Login" aria-label="Login">Log in</button>
-      <button *ngIf="isAuthenticated" class="btn btn-light mr-sm-2" (click)="logout()" type="logout" placeholder="Logout" aria-label="Logout">Log out</button>
+      <button *ngIf="!isAuthenticated" class="btn btn-light float-right" (click)="login()" type="login" placeholder="Login" aria-label="Login">Log in</button>
+      <button *ngIf="isAuthenticated" class="btn btn-light float-right" (click)="logout()" type="logout" placeholder="Logout" aria-label="Logout">Log out</button>
     </div>
   </header>
 </div>
