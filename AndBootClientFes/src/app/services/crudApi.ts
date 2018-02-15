@@ -42,6 +42,16 @@ export class CrudApi {
             return Observable.throw(error);});
     }
 
+    update(record : TableRecord) : Observable<Response> {
+        var json = this.convertToJson(record);
+        var recordName = record.properties.filter(p => p.key == "name")[0].value;
+        const url: string = `${this.apiUrl}/crud?table=${record.tableName}&name=${recordName}`;
+        console.log(url);
+        let headers = new Headers({ 'Content-Type': 'application/json'});
+        let options = new RequestOptions({ headers: headers });
+        return this.http.put(url, json, options);
+    }
+
     private convertToJson(record : TableRecord) : string {
         let jsonObject : any = {};
         for(let property of record.properties) {
