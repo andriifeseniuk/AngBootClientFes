@@ -19,7 +19,7 @@ export class AppComponent {
   }
 
   login() {
-    this.currentUser = 'Andrii';
+    this.currentUser = 'User';
     this.isAuthenticated = true;
   }
 
