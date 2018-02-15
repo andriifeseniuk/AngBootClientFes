@@ -18,6 +18,8 @@ import { UpdateComponent } from './components/update/update.component';
 import { DeleteComponent } from './components/delete/delete.component';
 import { JoinComponent } from './components/join/join.component'
 import { CrudApi } from './services/crudApi';
+import { JoinApi } from './services/joinApi';
+import { ModelsConvertingService } from './services/modelsConvertingService';
 
 
 @NgModule({
@@ -39,7 +41,7 @@ import { CrudApi } from './services/crudApi';
     FormsModule,
     HttpModule
   ],
-  providers: [CrudApi],
+  providers: [CrudApi, JoinApi, ModelsConvertingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
