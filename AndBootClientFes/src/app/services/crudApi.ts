@@ -52,6 +52,14 @@ export class CrudApi {
         return this.http.put(url, json, options);
     }
 
+    delete(table : string, recordName : string) : Observable<Response> {
+        const url: string = `${this.apiUrl}/crud?table=${table}&name=${recordName}`;
+        console.log(url);
+        let headers = new Headers({ 'Content-Type': 'application/json'});
+        let options = new RequestOptions({ headers: headers });
+        return this.http.delete(url, options);
+    }
+
     private convertToJson(record : TableRecord) : string {
         let jsonObject : any = {};
         for(let property of record.properties) {

@@ -14,7 +14,6 @@ export class UpdateComponent implements OnInit {
     tableName : "",
     properties : [{key : "name", value : ""}, {key : "", value : ""}]
   };
-  recordName : string;
   error : any;
   success : any;
 
